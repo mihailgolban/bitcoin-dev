@@ -55,7 +55,7 @@ COPY --from=build /usr/local/bin/bitcoin-cli /usr/local/bin
 RUN apk update && apk add boost boost-filesystem \
             boost-program_options \
             boost-system boost-thread busybox db-c++ \
-            libevent libgcc libressl2.6-libcrypto \
+            libevent libgcc libressl \
             libstdc++ musl
 
 #

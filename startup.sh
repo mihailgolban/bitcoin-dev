@@ -18,5 +18,5 @@ if [ X$BC_RPC_USER != "X" ]; then
 fi
 #
 # Now start the actual daemon
-#
-/usr/local/bin/bitcoind -conf=/bitcoin.conf -regtest -rest=1 -server=1 -printtoconsole -txindex=1
+#0
+/usr/local/bin/bitcoind -conf=/bitcoin.conf -chain=regtest -rest=1 -server=1 -printtoconsole -txindex=1
