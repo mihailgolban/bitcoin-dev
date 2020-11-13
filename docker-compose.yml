@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  alice:
+    image: bitcoin-alpine-node
+    container_name: alice_node
+    volumes:
+    - ./Alice/bitcoin.conf:/bitcoin.conf
+    ports:
+    - 18111:18111
+    entrypoint: ['/usr/local/bin/bitcoind', '-conf=/bitcoin.conf', '-rest=1', '-server=1', '-printtoconsole', '-txindex=1']
+
+  bob:
+    image: bitcoin-alpine-node
+    container_name: bob_node
+    volumes:
+    - ./Bob/bitcoin.conf:/bitcoin.conf
+    ports:
+    - 18222:18222
+    entrypoint: ['/usr/local/bin/bitcoind', '-conf=/bitcoin.conf', '-rest=1', '-server=1', '-printtoconsole', '-txindex=1']
+
+  network:
+    image: bitcoin-alpine-node
+    container_name: network_node
+    volumes:
+    - ./Network/bitcoin.conf:/bitcoin.conf
+    ports:
+    - 18333:18333
+    entrypoint: ['/usr/local/bin/bitcoind', '-conf=/bitcoin.conf', '-rest=1', '-server=1', '-printtoconsole', '-txindex=1']

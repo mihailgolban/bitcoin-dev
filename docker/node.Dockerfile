@@ -18,25 +18,3 @@ RUN apk update && apk add boost boost-filesystem \
             boost-system boost-thread busybox db-c++ \
             libevent libgcc libressl \
             libstdc++ musl
-
-#
-# Copy the bitcoin.conf file from
-# the build context into the container
-#
-COPY bitcoin.conf /bitcoin.conf
-
-#
-# Copy the startup script from
-# the build context into the container
-#
-COPY startup.sh /startup.sh
-
-#
-# Expose the port for the RPC interface
-#
-EXPOSE 18332/tcp
-
-#
-# Start the bitcoin server
-#
-ENTRYPOINT ["/startup.sh"]

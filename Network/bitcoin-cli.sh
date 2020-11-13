@@ -1,0 +1,1 @@
+docker exec network_node bitcoin-cli -conf=/bitcoin.conf "$@"

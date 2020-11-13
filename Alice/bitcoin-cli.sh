@@ -1,0 +1,1 @@
+docker exec alice_node bitcoin-cli -conf=/bitcoin.conf "$@"
