@@ -2,7 +2,7 @@
 
 Step 1. Build images
 ```bash
-./docker/build_all.sh
+cd ./docker && ./build_all.sh
 ```
 
 Step 2. Run
